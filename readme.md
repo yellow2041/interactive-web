@@ -74,4 +74,7 @@
             animation: spaceship-ani 1s infinite steps(17)
         }
   ```
-- 
+- step로 이미지를 쪼개서 position 이동 가능
+- git는 투명도가 표현이 안돼서 이 방식 사용.
+- duration만 바꾸면 속도 조절 가능
+- reverse를 통해 거꾸로도 재생 가능
