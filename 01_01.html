@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-container {
+            display: flex;   
+        }
+        .box {
+            width:100px;
+            height: 100px;
+            border: 2px solid black;
+            background: rgba(255,255,0,0.7);
+            transition:1s;
+        }
+        .box:hover {
+            /* transform: scale(2) rotate(45deg); */
+            /* transform: skew(30deg); */
+            /* transform: translate(30px,10px); */
+            /* transform: scale(1.5); */
+            /* transform-origin: left top; */
+            transform-origin: 100% 100%;
+            transform: rotate(45deg)
+        }
+        @keyframes sample-ani {
+            0%{
+                transform: translate(0,0);
+            }
+            50%{
+                background-color: aqua;
+                transform: translate(300px,0);
+            }
+            100%{
+                transform: translate(500px,300px);
+            }
+        }
+        .box2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background: #fff000;
+            animation: sample-ani 3s cubic-bezier(0.84,-0.11, 0.37, 0.94) infinite alternate;
+        }
+        .box2:hover {
+            animation-play-state: paused;
+        }
+        @keyframes spaceship-ani {
+            to {
+                background-position: -2550px 0;
+            }
+        }
+        .spaceship {
+            width: 150px;
+            height: 150px;
+            background : url('images/sprite_spaceship.png') no-repeat 0 0 / auto 150px;
+            animation: spaceship-ani 2s infinite steps(17)
+        }
+    </style>
+</head>
+<body>
+<h1>
+<p>
+오 어떤 새꺄ㅑ
+</p>
+<div class="box-container">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+</div>
+<p>
+    날 이렇게 만든게
+</p>
+</h1>
+<div class="box2">NELL</div>
+<div class="spaceship"></div>
+</body>
+</html>
