@@ -1,5 +1,5 @@
 # 강의내용 정리
-## Seaction 1 CSS 변환과 애니메이션
+## Section 1 CSS 변환과 애니메이션
 ### Transform
 - transform은 브라우저 가속을 활용하여 더 빠르고 효과적이다.
 - 아래와 같이 작성시 absolute로 top, left 등을 변경하는것보다 효과적이다
@@ -78,3 +78,25 @@
 - git는 투명도가 표현이 안돼서 이 방식 사용.
 - duration만 바꾸면 속도 조절 가능
 - reverse를 통해 거꾸로도 재생 가능
+## Section 2 CSS 3D
+> 전체 코드는 실습 코드 참고
+- vw, vh단위: 열려있는 브라우저 가로 전체가 100vw 세로 전체가 100vh
+- 부모에 perspective 속성을 주면 거리 조절 효과
+  - 픽셀이 클수록 우리 눈에서 멀리 있는 효과.
+  - 자식에 주면 같은 위치?에서 보는 느낌?
+- 변화 없는 디폴트 상태도 지정해주는게 성능상 좋음
+  ```
+  transform: rotateY(0deg);
+  ```
+  이게 있을 경우 브라우저가 trasform이 발생하지 않아도 일어날 준비?를 한다고함.(화면상으로는 0deg라 변화가 없는 상태)
+- 중간에 엘리먼트가 끼워져있는경우 부모 3D효과가 제대로 전달되지 않음.
+  ```html
+    <div class="world">
+        <div class="card">
+            <div class="card-side card-side-front">NELL</div>
+            <div class="card-side card-side-back">넬</div>
+        </div>
+    </div>
+  ```
+  이 경우에 card에 `transform-style: preserve-3d;`속성을 줘야 3d가 잘 먹힘
+- transform-origin 속성을 활용해서 회전하는 축 변경 가능
