@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            /* flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start; */
+            height: 80vh;
+            background:#DCECF2 ;
+        }
+        .item {
+            flex-grow: 1;
+            padding:2em;
+            border: 3px solid #2F415A ;
+            background: #A5CCDE;
+            flex-basis: 0;
+        }
+        .item:nth-child(1){flex-grow: 1;}
+        .item:nth-child(2){flex-grow: 1;}
+        .item:nth-child(3){flex-grow: 1;}
+        .item:nth-child(4){flex-grow: 1;}
+        .item:nth-child(5){flex-grow: 1;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Space bohemian</div>
+        <div class="item">NELL</div>
+        <div class="item">nelljw</div>
+        <div class="item">nelljh</div>
+        <div class="item">nelljk</div>
+    </div>
+</body>
+</html>

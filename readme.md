@@ -103,7 +103,7 @@
 - 사파리 호환을 위해 ` -webkit-backface-visibility: hidden;` 추가 필요
   - 브라우저별 호환을 위해 -moz-, -o-, -ms- 접두어 필요.
   - 표준속성을 마지막에 적어주는게 좋다.(CSS는 같은속성이 여러개면 아래에 쓴게 먼저쓴걸 덮어씀)
-- 익스플로어는 `transform-style: preserve-3d;` 지원이 안된다.
+- 익스플로어는 `transform-style: preserve-3d;` 지원이 안된다.(바로 아래 자식만 먹힌다)
   - card 클래스 계층하나를 삭제하고 card-side 앞면을 0->180도, 뒷면을 180->360로 돌리기
     > 그냥 익스플로어 안쓰면 안되나?
    ```html
@@ -145,3 +145,8 @@
             transform: rotateY(360deg);
         }
   ```
+## Section 3 CSS Flex
+- `flex-grow`속성: 안의 콘텐츠가 끝난 시점의 여백 비율 조정 가능(자식간 비율)
+  - 축약형으로 `flex`로 사용가능
+  - `flex-basis`: 콘텐츠가 있는 영역의 비중을 얼마나 줄건지. 0으로 설정하고 grow를 다 같은 값을 주면 콘텐츠 영역 포함하여 모두 같은 크기를 갖도록 조절 가능
+  - 
