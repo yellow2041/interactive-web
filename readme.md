@@ -160,3 +160,10 @@
       }
       stage.addEventListener('click',clickHandler)
   ```
+  - e는 이벤트객체
+  - `this`나 `e.currentTarget`은 stage를 가리키는데 `e.target`은 클릭된 요소들을 가리킴
+  - `e.tartget`이 원하는 부모 엘리먼트를 클릭한건지 판별 필요
+  - css로 target이 되지 않았으면 하는 엘리먼트 클래스에 `pointer-events:none`주면됨
+    - 하위에 있는 엘리먼트들은 다 target으로 잡을 수 없어서 주의해야함.
+  - 스크립트로 해당 클래스를 갖고있는지 판단.(while문으로 해당 클래스를 갖고있지 않는 부모 노드까지 조사)
+- `closest(선택자)`: 클릭된 element와 가장 가까운 선택자 반환
