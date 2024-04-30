@@ -149,3 +149,14 @@
 - `flex-grow`속성: 안의 콘텐츠가 끝난 시점의 여백 비율 조정 가능(자식간 비율)
   - 축약형으로 `flex`로 사용가능
   - `flex-basis`: 콘텐츠가 있는 영역의 비중을 얼마나 줄건지. 0으로 설정하고 grow를 다 같은 값을 주면 콘텐츠 영역 포함하여 모두 같은 크기를 갖도록 조절 가능
+## Section 5 자바스크립트 이벤트 다루기
+- 이벤트를 여러개 걸면 성능에 좋지않다
+  - 이벤트 위임 필요
+  ```javascript
+      const stage=document.querySelector('.stage');
+      function clickHandler(e){
+          if(e.target.classList.contains('ilbuni'))
+          stage.removeChild(e.target)
+      }
+      stage.addEventListener('click',clickHandler)
+  ```

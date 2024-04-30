@@ -15,14 +15,12 @@
 
     <script>
         (function(){
-            const ilbunGroup=document.querySelectorAll('.ilbuni');
             const stage=document.querySelector('.stage');
             function clickHandler(e){
-                stage.removeChild(this);
+                if(e.target.classList.contains('ilbuni'))
+                stage.removeChild(e.target)
             }
-            for(let i  = 0; i<ilbunGroup.length;i++){
-                ilbunGroup[i].addEventListener('click',clickHandler);
-            }
+            stage.addEventListener('click',clickHandler)
         })();
     </script>
 </body>
