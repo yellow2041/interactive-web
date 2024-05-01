@@ -52,9 +52,9 @@
             transition:0.5s;
             transform-origin: 0%;
         }
-        .door:nth-child(1) .door-body {background: #cebfd7cd}
-        .door:nth-child(2) .door-body {background: #CA8EA1cd}
-        .door:nth-child(3) .door-body {background: #F9B4A5cd}
+        .door:nth-child(1) .door-body {background: #cebfd7df}
+        .door:nth-child(2) .door-body {background: #CA8EA1df}
+        .door:nth-child(3) .door-body {background: #F9B4A5df}
         .door-opened .door-body {
             transform: perspective(800px) rotateY(-110deg);
         }
@@ -87,12 +87,19 @@
     <script>
         (function(){
             const stageElem=document.querySelector('.stage');
+            // 현재 활성화된 아이템을 저장
+            let currentItem;
 
             function doorHandler(e) {
                 const targetElem = e.target;
 
+                if(currentItem){
+                    currentItem.classList.remove('door-opened');
+                }
+
                 if(targetElem.classList.contains('door-body')){
-                targetElem.parentNode.classList.add('door-opened');
+                    targetElem.parentNode.classList.add('door-opened');
+                    currentItem = targetElem.parentNode;
                 }
             }   
 
