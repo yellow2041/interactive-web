@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        img {
+            max-width: 100%;
+        }
+        .content {
+            height: 1000vh;
+            padding: 20%;
+            background: #DCDE8A;
+        }
+        .output {
+            position:fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 200;
+            color:#fff;
+            background: rgba(0,0,0,0.4);
+        }
+        .ilbuni {
+            width: 100px;
+            margin: 20px auto;
+            transition: 1s;
+        }
+        .ilbuni.zoom {
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="output">FULL MOON</div>
+    <div class="content">
+        <p>
+            Come over here take off
+your war paint
+Let the silver flame
+Light you up with grace
+'Cause we're never gonna be
+We're never gonna be
+This young again
+Come over here
+no need to be afraid
+Let the silver flame
+Shine you up with grace
+'Cause we're never gonna be
+We're never gonna be
+This young again
+It's time to let yourself out
+The moon is full and bright
+Yeah tonight is the night
+Let it all burn to the ground
+Get high 'till you kiss the satellite
+The moon is full and bright
+Nothing can be disguised
+Just let it go let it all out
+Get high 'till you kiss the satellite
+Come over here
+no need to complain
+Let the silver flame
+Light you up with grace
+'Cause we're never gonna be
+We're never gonna be
+This young again
+The moon is full and blight
+Yeah tonight is the night
+Let it all burn to the ground
+Get high 'till you kiss the satellite
+The moon is full and bright
+Nothing can be disguised
+Just let it go let it all out
+Get high 'till you kiss the satellite
+        </p>
+        <figure class="ilbuni">
+            <img src="images/ilbuni_0.png" alt="일분이">
+        </figure>
+    </div>
+    <script>
+        (function(){
+            const outputElem=document.querySelector('.output');
+            const ilbuniElem = document.querySelector('.ilbuni');
+            
+            function showValue(){
+                 let posY = ilbuniElem.getBoundingClientRect().top;
+                 outputElem.innerHTML = posY;
+
+                 if(posY < window.innerHeight * 0.2){
+                    ilbuniElem.classList.add('zoom');
+                 }else{
+                    ilbuniElem.classList.remove('zoom')
+                 }
+
+            }
+
+            window.addEventListener('scroll',showValue);
+
+        })();
+    </script>
+</body>
+</html>

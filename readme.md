@@ -170,3 +170,6 @@
 # Section 6 3개의 문
 - `translate3D`를 사용하면 브라우저가 하드웨어 가속을 사용함. 성능이 더 좋다.
   - %를 사용하면 크기변화에 유연함(width, height 기준으로 이동)
+# Section 8 스크롤 다루기
+- `getBoundingClientRect()`: 스크롤에 따라 변경되는 element 위치를 얻어올 때 사용.
+  - element의 변경되는 위치 얻어올 떄 사용.
