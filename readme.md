@@ -173,3 +173,17 @@
 # Section 8 스크롤 다루기
 - `getBoundingClientRect()`: 스크롤에 따라 변경되는 element 위치를 얻어올 때 사용.
   - element의 변경되는 위치 얻어올 떄 사용.
+# Section 9 Transition/Animation 이벤트
+- trasitionstart, trasitionend 이벤트
+  ```javascript
+        const ballElem=document.querySelector('.ball');
+
+        window.addEventListener('click',(e)=>{
+            ballElem.style.transform = 'translate('+(e.clientX-15)+'px, '+(e.clientY-15)+'px)';
+        });
+
+        ballElem.addEventListener('transitionstart',()=>{
+            ballElem.classList.add('end')
+        })
+  ```
+  > 커서 중간 위치로 오게 하기 위해 margin을 조정하거나 translate 값 조정 
