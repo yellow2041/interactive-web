@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">취소</button>
+    <script>
+        let timeId;
+        let n = 0;
+        const btn=document.querySelector('.btn');
+
+        const sample=()=>{
+            n++;
+            console.log('NELL');
+            if(n>200)return;
+
+            timeId = requestAnimationFrame(sample);
+        }
+
+        sample();
+
+        btn.addEventListener('click',()=>{
+            cancelAnimationFrame(timeId);
+        })
+    </script>
+</body>
+</html>

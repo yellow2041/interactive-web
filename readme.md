@@ -189,3 +189,27 @@
   > 커서 중간 위치로 오게 하기 위해 margin을 조정하거나 translate 값 조정 
 - animationstart, animationend, animationiteration 이벤트
   - 애니메이션 관련 이벤트. 애니매이션 첫회 말고 두번째부터 실행됨. iterate 수만큼 실행
+# 타이밍 제어하기
+## requestAnimationFrame
+- setInterval 이 버벅이거나 배터리 사용량이 많아서 사용
+- 초당 60번 반복이 목표(무조건 반복이 보장되지 않음. 성능에 따라 다르다)
+- 캔버스 사용할 때 자주 사용
+```javascript
+        let timeId;
+        let n = 0;
+        const btn=document.querySelector('.btn');
+
+        const sample=()=>{
+            n++;
+            console.log('NELL');
+            if(n>200)return;
+
+            timeId = requestAnimationFrame(sample);
+        }
+
+        sample();
+
+        btn.addEventListener('click',()=>{
+            cancelAnimationFrame(timeId);
+        })
+```
