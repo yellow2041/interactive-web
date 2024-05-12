@@ -4,6 +4,14 @@
     <meta name="viewport" content="width= , initial-scale=1.0">
     <title>Transition/Animation Event</title>
     <style>
+        @keyframes ball-ani {
+            from {
+                transform: translate(0,0);
+            }
+            to {
+                transform: translate(200px, 200px);
+            }
+        }
         .ball {
             position: absolute;
             left: 0;
@@ -14,9 +22,13 @@
             border-radius: 50%;
             background: red;
             transition: 1s;
+            /* animation: ball-ani 1s 3 alternate forwards; */
         }
         .ball.end {
             background: dodgerblue;
+        }
+        .ball.endAni {
+            border: 5px solid dodgerblue;
         }
     </style>
 </head>
@@ -26,12 +38,20 @@
         const ballElem=document.querySelector('.ball');
 
         window.addEventListener('click',(e)=>{
-            ballElem.style.transform = 'translate('+(e.clientX-15)+'px, '+(e.clientY-15)+'px)';
+            //ballElem.style.transform = 'translate('+(e.clientX-15)+'px, '+(e.clientY-15)+'px)';
+            ballElem.style.animation='ball-ani 1s 3 alternate forwards';
         });
 
-        ballElem.addEventListener('transitionstart',()=>{
-            ballElem.classList.add('end')
-        })
+        // ballElem.addEventListener('transitionstart',()=>{
+        //     ballElem.classList.add('end')
+        // })
+
+        ballElem.addEventListener('animationend',()=>{
+            ballElem.classList.add('endAni')
+        });
+        ballElem.addEventListener('animationiteration',()=>{
+           console.log('반복'); 
+        });
     </script>
 </body>
 </html>

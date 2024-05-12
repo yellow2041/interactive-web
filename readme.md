@@ -187,3 +187,5 @@
         })
   ```
   > 커서 중간 위치로 오게 하기 위해 margin을 조정하거나 translate 값 조정 
+- animationstart, animationend, animationiteration 이벤트
+  - 애니메이션 관련 이벤트. 애니매이션 첫회 말고 두번째부터 실행됨. iterate 수만큼 실행
