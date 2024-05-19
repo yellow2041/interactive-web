@@ -49,7 +49,7 @@ body {
 .wall-front-a {transform: translateZ(300vw);}
 .wall-front-b {transform: translateZ(50vw);}
 .wall-front-c {transform: translateZ(-200vw);}
-.wall-front-d {transform: translateZ(-450vw);}
+.wall-front-d {transform: translateZ(-500vw);}
 .wall-content {
     display: flex;
     align-items: center;
@@ -58,4 +58,18 @@ body {
 }
 .wall-title {
     font-size: 5rem;
+}
+.progress-bar-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 5px;
+    background: #9AABD2;
+}
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #527099;
 }
