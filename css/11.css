@@ -1,0 +1,61 @@
+/* reset */
+body {
+    height:500vh;
+    font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NanumGothic, 'Malgun Gothic', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    color: #3A4663;
+    background: #B492BA;
+}
+
+.world {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+.stage {
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+.house {
+    width: 100vw;
+    height: 100vh;
+    transform: translateZ(-490vw);
+    transform-style: preserve-3d;
+}
+.wall {
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.8);
+}
+.wall-left {
+    width: 1000vw;
+    background-color: #E6D8E1;
+    transform: rotateY(90deg) translateZ(-500vw);
+}
+.wall-right {
+    width: 1000vw;
+    background-color: #E6D8E1;
+    transform: rotateY(90deg) translateZ(-400vw);
+}
+.wall-front-a {transform: translateZ(300vw);}
+.wall-front-b {transform: translateZ(50vw);}
+.wall-front-c {transform: translateZ(-200vw);}
+.wall-front-d {transform: translateZ(-450vw);}
+.wall-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.wall-title {
+    font-size: 5rem;
+}
