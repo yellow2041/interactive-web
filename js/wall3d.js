@@ -26,5 +26,11 @@
   });
 
   window.addEventListener("resize", resizeHandler);
+  stageElem.addEventListener("click", (e) => {
+    console.log();
+    new Character({
+      xPos: (e.clientX / window.innerWidth) * 100,
+    });
+  });
   resizeHandler();
 })();
