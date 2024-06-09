@@ -1,4 +1,4 @@
-function Character({ xPos }) {
+function Character({ xPos, speed }) {
   this.mainElem = document.createElement("div");
   this.mainElem.classList.add("character");
   this.mainElem.innerHTML = `<div class="character-face-con character-head">
@@ -31,7 +31,7 @@ function Character({ xPos }) {
   this.scrollState = false;
   this.lastScrolltop = 0;
   this.xPos = xPos;
-  this.speed = 0.3;
+  this.speed = speed;
   this.direction;
   this.rafId;
   this.runningState = false;
@@ -85,16 +85,23 @@ Character.prototype = {
     window.addEventListener("keyup", function (e) {
       self.mainElem.classList.remove("running");
       this.cancelAnimationFrame(self.rafId);
+      self.runningState = false;
     });
   },
   run: function () {
     const self = this;
+
     if (self.direction === "left") {
       self.xPos -= self.speed;
     } else if (self.direction === "right") {
       self.xPos += self.speed;
     }
-
+    if (self.xPos < 2) {
+      self.xPos = 2;
+    }
+    if (self.xPos > 88) {
+      this.xPos = 88;
+    }
     self.mainElem.style.left = self.xPos + "%";
     self.rafId = requestAnimationFrame(self.run.bind(self));
   },

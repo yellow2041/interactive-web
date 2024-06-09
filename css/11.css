@@ -30,7 +30,7 @@ body {
     transition: background .5s;
 }
 body[data-char='ragirl'] {
-    background: #ff7200;
+    background: #E77A74;
 }
 
 .world {
